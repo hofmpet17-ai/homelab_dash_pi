@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request
 from datetime import date, timedelta, datetime
+import os
 import sqlite3
 import database
 app = Flask(__name__)
@@ -87,6 +88,10 @@ def create():
     done= database.get_done_tasks(conn)
     conn.close()
     return render_template("wichtiges.html", open = open, done = done, format_frist = format_frist)
+
+if not os.path.exists("Andis_Dash"):
+    database.create_db("Andis_Dash")
+    
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
