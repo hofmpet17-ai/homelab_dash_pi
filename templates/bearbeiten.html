@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Page Berabeiten</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_b.css') }}">
+</head>
+
+<body>
+    <h1>Aufgabe Bearbeiten</h1>
+
+    <div class = "bearbeiten">
+        <div class = "beschreibung">
+        <h2>Beschreibung:</h2>
+        <form action = "{{ url_for('edit_new', task_id= task[0]) }}" method = "POST">
+         <input type ="text" name = "description" value="{{ (task[1]) }}"> 
+        </div>
+       <div class = "frist">
+        <h2>Frist:</h2>
+         <input type ="date" name = "frist" value="{{ task[2] }}"> 
+        </div>
+        <div class = "wichitg">
+        <h2>Wichitg:</h2>
+         <input type="checkbox" name ="importance" \
+         value = "1" {% if task[3] == 1 %}checked{% endif %}>
+        </div>
+        
+    <div class = "buttons"> 
+        
+        <button id = "submit" name = "aktion" value="speichern">Speichern</button>
+        <button id = "submit" name = "aktion" value="löschen">Löschen</button>
+        </form>
+        <a href ="{{ url_for('create') }}">    
+        <button type = "button">Zurück</button>
+        </a>
+    </div></div>
+        
+</body>
+</html>

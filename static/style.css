@@ -1,0 +1,161 @@
+:root{
+    --card: white;
+    --h2size: 22px;  
+    --accent: blue; 
+    --accent2: green; 
+    --accent3: red;  
+    --textcolor1: blue; 
+    --textcolor2: red; 
+}
+
+body{
+    background: rgb(206, 197, 197);
+    color: black; 
+    font-family: monospace;
+}
+h1{
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.wichtig h2{
+    font-family: monospace;
+    font-size: var(--h2size);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px var(--accent2);
+
+}
+
+
+.kalender h2{
+    font-family: monospace;
+    font-size: var(--h2size);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px var(--accent);
+}
+.training h2{
+    font-family: monospace;
+    font-size: var(--h2size);
+    font-weight: bold;
+    letter-spacing: 1px;
+text-shadow: 1px 1px 1px var(--accent3);}
+
+.dashboard{
+    
+    border: 3px solid black; 
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas: "wichtig heute"
+                        "kalender training";
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px gray;
+    gap: 20px;
+    padding: 20px;  
+    
+}
+ul{
+    list-style-position: inside;
+    padding-inline: 20px;
+    list-style-type: auto;
+}
+.heute{
+    display: grid; 
+    border: 1px solid black; 
+    grid-area: heute; 
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px; 
+    background-color: var(--card);
+
+
+}
+.values1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px; 
+    padding: 2px; 
+
+}
+.values1 p{
+    display: grid; 
+    border: 1px solid black; 
+    border-radius: 5px;
+}
+.wichtig{
+    display: grid; 
+    border: 1px solid var(--accent2); 
+
+    grid-area: wichtig;
+    text-align: center;
+    padding: 20px; 
+    border-radius: 10px;
+    background-color: var(--card);
+   
+
+
+}
+.values{
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap: 2px; 
+    padding: 2px; 
+
+}
+.values li{
+    display: grid; 
+    border: 1px solid var(--accent2); 
+    border-radius: 5px;
+
+}
+.list2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2px; 
+    gap: 2px; 
+
+}
+.list2 li{
+    display: grid;
+    border: 1px solid var(--accent); 
+    border-radius: 5px;
+}
+
+.kalender{
+    display: grid; 
+    border: 1px solid var(--accent); 
+
+    grid-area: kalender;
+    text-align: center;
+    padding: 20px; 
+    border-radius: 10px;
+    background-color: var(--card);
+           
+
+
+}
+.training{
+        display: grid; 
+    border: 1px solid var(--accent3); 
+
+    grid-area: training;
+    text-align: center;
+    padding: 20px; 
+    border-radius: 10px;
+    background-color: var(--card);
+}
+.list3{
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap: 2px; 
+    padding: 2px; 
+}
+.list3 li{
+    display: grid;
+    border: 1px solid red; 
+    border-radius: 5px;
+
+}

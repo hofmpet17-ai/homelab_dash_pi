@@ -1,0 +1,130 @@
+:root{
+     --card: rgb(132, 227, 240);
+    --h2size: 22px;  
+    --accent: blue; 
+    --accent2: green; 
+    --accent3: red;  
+    --textcolor1: blue; 
+    --textcolor2: red; 
+}
+
+body{
+    background:var(--card);
+    color: black; 
+    font-family: monospace;
+    text-align: center;
+}
+h1 {
+    text-decoration: underline;
+
+}
+.anzeige{
+    display: grid; 
+    grid-template-columns: 1fr;
+    border: 5px solid white; 
+    padding: 10px; 
+    width: 50%;
+    margin: auto; 
+}
+.eingabe{
+
+    display: grid; 
+    grid-template-columns: 1fr;
+    padding: 20px; 
+}
+
+
+.eingabe input[name="description"]{
+    width: 400px;
+        
+}
+.aufgaben{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.aufgaben h2{
+    font-size: 20px;
+    padding: 20px; 
+    text-align: start;
+    margin: 0% 2%;
+     
+    text-decoration: underline;
+
+    
+    
+}
+.aufgaben ul{
+    border: 1px solid black; 
+    width: 70%; 
+    margin: auto; 
+}
+.aufgaben li{
+    display: grid; 
+    grid-template-columns: 30px 2fr 1fr auto 1fr;           
+    align-items: center;
+    padding-top: 10px;
+}
+.aufgaben li::before{
+    content:"-"; 
+    align-items: start;
+}
+.aufgaben li p{
+    text-align: start;
+    
+}
+.aufgaben hr{
+    border: 1px solid black;
+    width: 90%;
+    margin: 20px auto; 
+}
+
+.abstand1 hr{
+    border: 1px solid white;
+    width: 90%;
+    margin: 20px auto; 
+}
+/* ab hier abgeschlossen*/ 
+
+
+
+
+.abgeschlossen{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.abgeschlossen h2{
+    font-size: 20px;
+    padding: 20px; 
+    text-align: start;
+    margin: 0% 2%;
+     
+    text-decoration: underline;
+
+    
+    
+}
+.abgeschlossen ul{
+    border: 1px solid black; 
+    width: 70%; 
+    margin: auto; 
+}
+.abgeschlossen li{
+    display: grid; 
+    grid-template-columns: 30px 2fr 1fr auto 1fr;           
+    align-items: center;
+    padding-top: 10px; }
+
+
+.abgeschlossen li::before{
+    content:"-"; 
+    align-items: start;
+}
+.abgeschlossen li p{
+    text-align: start;
+    
+}
+.abgeschlossen hr{
+    border: 1px solid black;
+    width: 90%;
+    margin: 20px auto; 
+}

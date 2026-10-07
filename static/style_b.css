@@ -1,0 +1,31 @@
+:root{
+     --card: rgb(132, 227, 240);
+    --h2size: 22px;  
+    --accent: blue; 
+    --accent2: green; 
+    --accent3: red;  
+    --textcolor1: blue; 
+    --textcolor2: red; 
+}
+
+body{
+    background-color: var(--card);
+    font-family: monospace;
+    text-align: start;
+}
+h1 {
+    text-decoration: underline;
+}
+.bearbeiten{
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 5px solid white; 
+    padding: 10px; 
+    width: 50%;
+    align-items: start;
+}
+p{
+    border: 1px solid black; 
+    padding: 5px; 
+
+}

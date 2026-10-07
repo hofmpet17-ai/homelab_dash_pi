@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title> Page Wichtiges </title>
+    <link rel = "stylesheet" href="static/style_wi.css">
+</head>
+
+<body>
+
+    <div class ="anzeige">
+        <h1> Wichtiges </h1>  
+    <br></br>
+   
+    <div class ="eingabe">
+        <form method="POST">
+            <input type ="text" name ="description"placeholder="Neue Aufgabe...">
+            <input type ="date" name = "frist" placeholder="Frist"> 
+            <label>
+                <input type ="checkbox" name ="importance">
+                Wichtig
+            </label>
+           
+            <button type = "submit">+</button>
+            
+
+        </form>
+    
+    </div>
+    <div class = "abstand1"> 
+        <hr>
+    </div>
+ <form method="GET">
+    <div class="sortier_menue">
+    <select name ="sortierung" onchange="this.form.submit()">
+        /*bedeutet sobald sich die auswahl ändert schicken */
+        <option value="">Sortieren</option>
+        <option value="frist">Frist</option>
+        <option value="wichtig">Wichtig</option>
+    </select>
+    </div>
+ </form>
+
+    <div class ="aufgaben">
+        <h2>Offene Aufgaben</h2>
+        
+            <ul>
+             {% for open in open %}
+                <li>
+                    <p>{{ open[1]}} </p> 
+                    <p>{{ format_frist(open[2])  }} </p> 
+                    <p>{{ open[3]}} </p> 
+                <form action ="wichtiges/erledigt/{{ open[0] }}" method = "POST">    
+                    <button id = "submit">Erledigt</button>
+                </form>
+                <a href ="wichtiges/bearbeiten/{{ open[0] }}">    
+                    <button>Bearbeiten</button>
+                </a>
+                </li>
+                <hr> 
+            {% endfor %}
+            </ul>
+
+    </div>
+  <div class = "abstand1"> 
+        <hr>
+    </div>
+    <div class ="abgeschlossen">
+        <h2>Abgeschlossen</h2>
+        <ul name="liste_erledigt">
+            {% for done in done %}  
+            <li>
+                    <p>{{done [1]}}</p> 
+                     <p>{{  format_frist(done[2])  }}</p>
+                     <p>{{done[3]}}</p>
+                <form action ="wichtiges/unerledigt/{{ done[0] }}" method = "POST">    
+                    <button id = "submit">unerledigt</button>
+                </form>
+                <form action ="wichtiges/löschen/{{ done[0] }}" method = "POST">
+                    <button> löschen</button>
+                </form>
+                </li>
+                <hr> 
+            {% endfor %}
+                
+        </ul> 
+
+
+
+    </div> 
+
+    </div>
+    
+</body>
+</html>
