@@ -90,7 +90,9 @@ def create():
     return render_template("wichtiges.html", open = open, done = done, format_frist = format_frist)
 
 if not os.path.exists("Andis_Dash"):
-    database.create_db("Andis_Dash")
+    conn = sqlite3.connect("Andis_Dash")
+    database.create_db(conn)
+    conn.close()
     
 
 if __name__ == "__main__":
